@@ -1,5 +1,6 @@
 package com.appsport.manager;
 
+import android.content.Context;
 import android.os.Handler;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ import java.util.concurrent.ScheduledFuture;
  */
 public final class TabataManager {
 
+    private Context context;
     private Tabata program;
     private TextView timerView;
     private TextView labelView;
@@ -39,8 +41,10 @@ public final class TabataManager {
      * @param program the program to be executed
      * @param timerValue the view that will be edited every seconds (its our timer)
      */
-    public void initAndStart(Tabata program, TextView timerValue, TextView label, TextView tabataLeftView, TextView cycleLeftView) {
+    public void initAndStart(Context context, Tabata program, TextView timerValue, TextView label, TextView tabataLeftView, TextView cycleLeftView) {
+        this.context = context;
         setProgram(program);
+
         setTimerView(timerValue);
         setLabelView(label);
         setTabataLeftLabelView(tabataLeftView);
@@ -149,8 +153,8 @@ public final class TabataManager {
             @Override
             public void run() {
                 getLabelView().setText(state.getName());
-                getTabataLeftLabelView().setText("Encore "+Math.max(0, getProgram().getCurrentTabata())+" Tabata");
-                getCycleLeftLabelView().setText("Encore "+Math.max(0, getProgram().getCurrentCycle())+" cycles");
+                getTabataLeftLabelView().setText(context.getResources().getString(R.string.label_tabata_restants_$count, Math.max(0, getProgram().getCurrentTabata())));
+                getCycleLeftLabelView().setText(context.getResources().getString(R.string.label_cycle_restants_$count, Math.max(0, getProgram().getCurrentCycle())));
             }
         });
     }

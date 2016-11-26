@@ -39,7 +39,6 @@
     <string name="title_suppression">Suppression</string>
     <string name="voulez_vous_vraiment_supprimer_$text">"Voulez vous vraiment supprimer %1$s ?"</string>
 
-
     <!-- Add program activity -->
     <string name="label_nom_du_programme">Nom du programme</string>
     <string name="label_nombre_tabata">Nombre de Tabata</string>
@@ -54,6 +53,10 @@
     <string name="button_start">Start</string>
     <string name="button_stop">Interrompre (Arrêt complet)</string>
     <string name="label_start_pour_commencer">Start pour commencer !</string>
+    <string name="label_cycle_restants">Cycles restants : 0</string>
+    <string name="label_cycle_restants_$count">Cycles restants : %1$d</string>
+    <string name="label_tabata_restants">Tabata restants : 0</string>
+    <string name="label_tabata_restants_$count">Tabata restants : %1$d</string>
 
     <!-- Toasts -->
     <string name="vous_devez_selectionner_un_programme">Vous devez sélectionner un programme</string>

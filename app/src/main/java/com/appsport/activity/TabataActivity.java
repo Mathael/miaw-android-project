@@ -41,6 +41,9 @@ public class TabataActivity extends AppCompatActivity {
         timerValue = (TextView) findViewById(R.id.tabata_counter);
         tabataLeftCount = (TextView) findViewById(R.id.tabata_left_count);
         cycleLeftCount = (TextView) findViewById(R.id.cycle_left_count);
+
+        tabataLeftCount.setText(getResources().getString(R.string.label_tabata_restants_$count, Math.max(0, getTabata().getMaxTabata())));
+        cycleLeftCount.setText(getResources().getString(R.string.label_cycle_restants_$count, Math.max(0, getTabata().getMaxCycleCount())));
     }
 
     @Override
@@ -68,7 +71,7 @@ public class TabataActivity extends AppCompatActivity {
 
         startButton.setEnabled(false);
 
-        TabataManager.getInstance().initAndStart(getTabata(), timerValue, textValue, tabataLeftCount, cycleLeftCount);
+        TabataManager.getInstance().initAndStart(getApplicationContext(), getTabata(), timerValue, textValue, tabataLeftCount, cycleLeftCount);
     }
 
     public void buttonTabataPause(View view) {
