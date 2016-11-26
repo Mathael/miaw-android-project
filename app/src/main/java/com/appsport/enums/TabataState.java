@@ -1,7 +1,5 @@
 package com.appsport.enums;
 
-import com.appsport.R;
-
 /**
  * @author LEBOC Philippe on 05/10/2016.
  *

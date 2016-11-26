@@ -37,7 +37,7 @@ public class TabataAddProgramActivity extends AppCompatActivity {
         //System.out.println("Nouveau programme -> \r\n" + tabata.toString());
         Tabata.save(tabata);
 
-        //final Intent intent = new Intent(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //final Intent intent = new Intent(Intent.FLAG_ACTIVITY_CLEAR_TOP); // exemple d'utilisation des FLAG
         setResult(Activity.RESULT_OK);
         finish();
     }
