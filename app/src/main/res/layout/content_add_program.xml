@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:maxLength="20"
                 android:ems="10"
                 android:id="@+id/input_tabata_name" />
 
@@ -51,9 +52,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:id="@+id/input_tabata_count"
-                android:inputType="numberDecimal"
                 android:selectAllOnFocus="false"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:inputType="number|numberSigned" />
 
             <TextView
                 android:textColor="@color/colorWhite"
@@ -67,9 +68,10 @@
                 android:background="@color/colorWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/input_tabata_cycles_count" />
+                android:id="@+id/input_tabata_cycles_count"
+                android:singleLine="true"
+                android:inputType="number|numberSigned" />
 
             <TextView
                 android:textColor="@color/colorWhite"
@@ -83,9 +85,9 @@
                 android:background="@color/colorWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/input_tabata_prepare_time" />
+                android:id="@+id/input_tabata_prepare_time"
+                android:inputType="number|numberSigned" />
 
             <TextView
                 android:textColor="@color/colorWhite"
@@ -99,9 +101,9 @@
                 android:background="@color/colorWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/input_tabata_work_time" />
+                android:id="@+id/input_tabata_work_time"
+                android:inputType="number|numberSigned" />
 
             <TextView
                 android:textColor="@color/colorWhite"
@@ -115,9 +117,9 @@
                 android:background="@color/colorWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
                 android:ems="10"
-                android:id="@+id/input_tabata_rest_time" />
+                android:id="@+id/input_tabata_rest_time"
+                android:inputType="number|numberSigned" />
 
             <Button
                 android:text="@string/button_valider"
