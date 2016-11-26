@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorDarkLight">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="?attr/actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/label_programme_actif"
                 android:textSize="24sp"
+                android:textColor="@color/colorWhite"
                 android:textAlignment="center" />
 
             <TextView
@@ -48,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/label_current_program"
                 android:textAlignment="center"
+                android:textColor="@color/colorWhite"
                 android:textStyle="normal|bold" />
 
             <RelativeLayout
@@ -55,96 +59,106 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:text="0"
+                    android:text="@string/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/textView2"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="70dp"
                     android:id="@+id/home_tabata_count"
+                    android:textColor="@color/colorWhite"
                     android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="Nombre de tabata"
+                    android:text="@string/label_nombre_de_tabata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
                     android:layout_marginTop="14dp"
                     android:id="@+id/textView2"
+                    android:textColor="@color/colorWhite"
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:text="Nombre de cycles"
+                    android:text="@string/label_nombre_cycle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
                     android:id="@+id/textView10"
                     android:layout_below="@+id/textView2"
+                    android:textColor="@color/colorWhite"
                     android:layout_alignStart="@+id/textView2" />
 
                 <TextView
-                    android:text="0"
+                    android:text="@string/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/textView10"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="70dp"
                     android:id="@+id/home_cycle_count"
+                    android:textColor="@color/colorWhite"
                     android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="Temps de préparation"
+                    android:text="@string/label_temps_de_preparation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView10"
                     android:layout_alignStart="@+id/textView10"
                     android:layout_marginTop="14dp"
+                    android:textColor="@color/colorWhite"
                     android:id="@+id/textView12" />
 
                 <TextView
-                    android:text="0"
+                    android:text="@string/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/textView12"
                     android:layout_alignEnd="@+id/home_cycle_count"
                     android:id="@+id/home_prepare_time"
+                    android:textColor="@color/colorWhite"
                     android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="Temps d'exercices"
+                    android:text="@string/label_temps_d_exercices"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView12"
                     android:layout_alignStart="@+id/textView12"
                     android:layout_marginTop="13dp"
+                    android:textColor="@color/colorWhite"
                     android:id="@+id/textView14" />
 
                 <TextView
-                    android:text="0"
+                    android:text="@string/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/textView14"
                     android:layout_alignEnd="@+id/home_prepare_time"
                     android:id="@+id/home_work_time"
+                    android:textColor="@color/colorWhite"
                     android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="Temps de repos"
+                    android:text="@string/label_temps_de_repos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView14"
                     android:layout_alignStart="@+id/textView14"
                     android:layout_marginTop="13dp"
+                    android:textColor="@color/colorWhite"
                     android:id="@+id/textView16"
                     android:paddingBottom="15dp" />
 
                 <TextView
-                    android:text="0"
+                    android:text="@string/zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/textView16"
                     android:layout_alignEnd="@+id/home_work_time"
                     android:id="@+id/home_rest_time"
+                    android:textColor="@color/colorWhite"
                     android:textStyle="normal|bold"
                     android:paddingBottom="15dp" />
             </RelativeLayout>
