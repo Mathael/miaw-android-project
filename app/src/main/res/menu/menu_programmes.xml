@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom"
         android:visible="true"
         android:enabled="true"
-        android:title="Commencer" />
+        android:title="@string/menu_tabata_start" />
 
     <item
         android:id="@+id/action_favorite"
@@ -17,5 +17,5 @@
         app:showAsAction="ifRoom"
         android:visible="true"
         android:enabled="true"
-        android:title="Favoris" />
+        android:title="@string/menu_favorite" />
 </menu>

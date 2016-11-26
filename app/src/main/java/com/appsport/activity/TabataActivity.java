@@ -8,10 +8,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appsport.R;
+import com.appsport.common.Constants;
 import com.appsport.manager.TabataManager;
 import com.appsport.model.Tabata;
-
-import java.util.List;
 
 /**
  * @author LEBOC Philippe
@@ -31,7 +30,7 @@ public class TabataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabata);
 
-        final Tabata tabata = getIntent().getExtras().getParcelable("TABATA");
+        final Tabata tabata = getIntent().getExtras().getParcelable(Constants.PARCELABLE_TABATA_TAG);
         if(tabata == null) finish();
 
         setTabata(tabata);
@@ -47,15 +46,14 @@ public class TabataActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        System.out.println("onSaveInstanceState : "+getTabata());
         TabataManager.getInstance().cancelAllTimers();
-        outState.putParcelable("TABATA", getTabata());
+        outState.putParcelable(Constants.PARCELABLE_TABATA_TAG, getTabata());
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle state) {
         super.onRestoreInstanceState(state);
-        setTabata((Tabata)state.getParcelable("TABATA"));
+        setTabata((Tabata)state.getParcelable(Constants.PARCELABLE_TABATA_TAG));
         if(getTabata() != null) {
             startButton.setEnabled(false);
             TabataManager.getInstance().resume(getTabata(), timerValue, textValue);
@@ -91,7 +89,6 @@ public class TabataActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        System.out.println("Destroy : " + this.getClass().getSimpleName());
         TabataManager.getInstance().cancelAllTimers();
     }
 

@@ -17,13 +17,6 @@
             android:orientation="vertical">
 
             <Button
-                android:text="@string/button_tabata"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_tabata"
-                android:onClick="onClickTabataButton" />
-
-            <Button
                 android:text="@string/button_programmes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/button_stats"
-                android:text="@string/button_statistiques" />
+                android:text="@string/button_statistiques"
+                android:onClick="onClickStatsButton" />
 
             <TextView
                 android:text="@string/label_programme_actif"

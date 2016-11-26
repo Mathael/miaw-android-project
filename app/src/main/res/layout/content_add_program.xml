@@ -20,113 +20,123 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:textColor="@color/colorWhite"
-                android:text="@string/label_nom_du_programme"
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/label_nom_du_programme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3" />
+
+                <EditText
+                    android:labelFor="@+id/textView3"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:ems="10"
+                    android:id="@+id/input_tabata_name" />
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/label_nombre_tabata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/label_tabata_name" />
+
+                <EditText
+                    android:labelFor="@+id/label_tabata_name"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/input_tabata_count"
+                    android:selectAllOnFocus="false"
+                    android:maxLines="1"
+                    android:inputType="number|numberSigned" />
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/label_nombre_cycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4" />
+
+                <EditText
+                    android:labelFor="@+id/textView4"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/input_tabata_cycles_count"
+                    android:maxLines="1"
+                    android:inputType="number|numberSigned" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView3" />
+                android:layout_marginTop="30dp">
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/label_temps_prepare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5" />
 
-            <EditText
-                android:labelFor="@+id/textView3"
-                android:background="@color/colorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLength="20"
-                android:ems="10"
-                android:id="@+id/input_tabata_name" />
+                <EditText
+                    android:labelFor="@+id/textView5"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/input_tabata_prepare_time"
+                    android:inputType="number|numberSigned" />
 
-            <TextView
-                android:textColor="@color/colorWhite"
-                android:text="@string/label_nombre_tabata"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/label_tabata_name" />
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/label_temps_work"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6" />
 
-            <EditText
-                android:labelFor="@+id/label_tabata_name"
-                android:background="@color/colorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:id="@+id/input_tabata_count"
-                android:selectAllOnFocus="false"
-                android:maxLines="1"
-                android:inputType="number|numberSigned" />
+                <EditText
+                    android:labelFor="@+id/textView6"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/input_tabata_work_time"
+                    android:inputType="number|numberSigned" />
 
-            <TextView
-                android:textColor="@color/colorWhite"
-                android:text="@string/label_nombre_cycle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView4" />
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/label_temps_rest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView7" />
 
-            <EditText
-                android:labelFor="@+id/textView4"
-                android:background="@color/colorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:id="@+id/input_tabata_cycles_count"
-                android:singleLine="true"
-                android:inputType="number|numberSigned" />
-
-            <TextView
-                android:textColor="@color/colorWhite"
-                android:text="@string/label_temps_prepare"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView5" />
-
-            <EditText
-                android:labelFor="@+id/textView5"
-                android:background="@color/colorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:id="@+id/input_tabata_prepare_time"
-                android:inputType="number|numberSigned" />
-
-            <TextView
-                android:textColor="@color/colorWhite"
-                android:text="@string/label_temps_work"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView6" />
-
-            <EditText
-                android:labelFor="@+id/textView6"
-                android:background="@color/colorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:id="@+id/input_tabata_work_time"
-                android:inputType="number|numberSigned" />
-
-            <TextView
-                android:textColor="@color/colorWhite"
-                android:text="@string/label_temps_rest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView7" />
-
-            <EditText
-                android:labelFor="@+id/textView7"
-                android:background="@color/colorWhite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:id="@+id/input_tabata_rest_time"
-                android:inputType="number|numberSigned" />
-
+                <EditText
+                    android:labelFor="@+id/textView7"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/input_tabata_rest_time"
+                    android:inputType="number|numberSigned" />
+            </LinearLayout>
             <Button
                 android:text="@string/button_valider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/button_tabata_add_program"
-                android:onClick="onClickAddProgram"/>
+                android:onClick="onClickAddProgram"
+                android:layout_marginTop="15dp" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

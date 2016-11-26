@@ -20,6 +20,8 @@ public class Tabata extends SugarRecord implements Parcelable {
     private int maxRestTime;
     private int maxWorkTime;
 
+    private boolean isFavorite;
+
     // Dynamic vars (used here to re-launch the tabata timer when orientation change)
     @Ignore
     private int currentTabata;
@@ -55,6 +57,7 @@ public class Tabata extends SugarRecord implements Parcelable {
         setMaxCycleCount(cycle);
         setDefaultActive(false);
         setCurrentState(TabataState.NONE);
+        setFavorite(false);
     }
 
     protected Tabata(Parcel in) {
@@ -69,6 +72,7 @@ public class Tabata extends SugarRecord implements Parcelable {
         prepareTime = in.readInt();
         maxCycleCount = in.readInt();
         currentState = TabataState.values()[in.readInt()];
+        isFavorite = in.readByte() != 0;
     }
 
     @Override
@@ -84,6 +88,7 @@ public class Tabata extends SugarRecord implements Parcelable {
         dest.writeInt(prepareTime);
         dest.writeInt(maxCycleCount);
         dest.writeInt(currentState.ordinal());
+        dest.writeByte((byte)(isFavorite ? 1 : 0));
     }
 
     @Override
@@ -201,6 +206,14 @@ public class Tabata extends SugarRecord implements Parcelable {
 
     public void setCurrentState(TabataState currentState) {
         this.currentState = currentState;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 
     @Override
