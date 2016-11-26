@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.ProgramActivity">
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@android:drawable/btn_star_big_off"
+        app:showAsAction="ifRoom"
+        android:visible="false"
+        android:enabled="false" />
+    <item
+        android:id="@+id/action_start"
+        android:icon="@android:drawable/ic_media_play"
+        app:showAsAction="ifRoom"
+        android:visible="true"
+        android:enabled="false"
+        android:title="Commencer" />
+    <item
+        android:id="@+id/action_share"
+        android:icon="?android:attr/actionModeShareDrawable"
+        app:showAsAction="ifRoom"
+        android:visible="true"
+        android:enabled="false"
+        android:title="Partager" />
+</menu>

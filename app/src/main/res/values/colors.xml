@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorGreenPrimary">#1aa66e</color>
+    <color name="colorGreenSecondary">#1e614e</color>
+    <color name="colorDark">#212121</color>
+    <color name="colorDarkLight">#454545</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="REST">#2b76c1</color>
+    <color name="WORK">#8e2828</color>
+    <color name="PREPARE">#ff6f00</color>
+</resources>

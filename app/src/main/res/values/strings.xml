@@ -1,0 +1,49 @@
+<resources>
+    <!-- Settings -->
+    <string name="app_name">TabataTraining</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_tabata">TabataActivity</string>
+    <string name="title_activity_program">ProgramActivity</string>
+    <string name="title_activity_tabata_program_creation">Settings</string>
+
+    <!-- Useful strings -->
+    <string name="zero">0</string>
+
+    <!-- Main Activity -->
+    <string name="button_tabata">Entrainement</string>
+    <string name="button_programmes">Programmes</string>
+    <string name="button_statistiques">Statistiques</string>
+    <string name="label_programme_actif">Programme actif</string>
+    <string name="label_aucun_programme">Aucun programme</string>
+    <string name="label_nombre_de_tabata">Nombre de tabata</string>
+    <string name="label_nombre_de_cycles">Nombre de cycles</string>
+    <string name="label_temps_de_preparation">Temps de préparation</string>
+    <string name="label_temps_d_exercices">Temps d\'exercices</string>
+    <string name="label_temps_de_repos">Temps de repos</string>
+
+    <!-- Programme Activity -->
+
+    <!-- Add program activity -->
+    <string name="label_nom_du_programme">Nom du programme</string>
+    <string name="label_nombre_tabata">Nombre de Tabata</string>
+    <string name="label_nombre_cycle">Nombre de cycles</string>
+    <string name="label_temps_rest">Temps de repos (secondes)</string>
+    <string name="label_temps_work">Temps d\'exercices (secondes)</string>
+    <string name="label_temps_prepare">Temps de préparation (secondes)</string>
+    <string name="button_valider">Valider</string>
+
+    <!-- Tabata Activity -->
+    <string name="label_timer_value">00:00</string>
+    <string name="button_start">Start</string>
+    <string name="button_stop">Interrompre (Arrêt complet)</string>
+    <string name="label_start_pour_commencer">Start pour commencer !</string>
+
+    <!-- Toasts -->
+    <string name="toast_changement_effectue">Changement éffectué</string>
+    <string name="toast_programme_entrainement_arrete">Programme d\'entrainement arrêté</string>
+    <string name="title_activity_settings">Settings</string>
+</resources>
