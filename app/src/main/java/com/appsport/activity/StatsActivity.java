@@ -15,6 +15,9 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 
 import java.util.ArrayList;
 
+/**
+ * @author LEBOC Philippe
+ */
 public class StatsActivity extends AppCompatActivity {
 
     // we're going to display pie chart for school attendance

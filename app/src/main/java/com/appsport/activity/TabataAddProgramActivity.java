@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.appsport.R;
 import com.appsport.model.Tabata;
 
+/**
+ * @author LEBOC Philippe
+ */
 public class TabataAddProgramActivity extends AppCompatActivity {
 
     @Override
