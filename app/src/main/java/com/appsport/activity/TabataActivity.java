@@ -31,6 +31,11 @@ public class TabataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabata);
 
+        final Tabata tabata = getIntent().getExtras().getParcelable("TABATA");
+        if(tabata == null) finish();
+
+        setTabata(tabata);
+
         startButton = (Button) findViewById(R.id.tabata_startstop_button);
 
         textValue = (TextView) findViewById(R.id.tabata_state_text);
@@ -42,8 +47,8 @@ public class TabataActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        System.out.println("onSaveInstanceState : "+getTabata());
         TabataManager.getInstance().cancelAllTimers();
-        System.out.println("onSaveInstanceState: "+getTabata().getTimer());
         outState.putParcelable("TABATA", getTabata());
     }
 
@@ -59,22 +64,13 @@ public class TabataActivity extends AppCompatActivity {
 
     public void buttonTabataStart(View view) {
         // Launch default program
-        final List<Tabata> tabatas = Tabata.find(Tabata.class, "is_Default_Active = ?", "1");
-        if(!tabatas.isEmpty())
-        {
-            final Tabata tabata = tabatas.get(0);
-            tabata.setCurrentCycle(tabata.getMaxCycleCount());
-            tabata.setCurrentTabata(tabata.getMaxTabata());
-            setTabata(tabata);
+        getTabata().setCurrentCycle(getTabata().getMaxCycleCount());
+        getTabata().setCurrentTabata(getTabata().getMaxTabata());
+        setTabata(getTabata());
 
-            startButton.setEnabled(false);
+        startButton.setEnabled(false);
 
-            TabataManager.getInstance().initAndStart(getTabata(), timerValue, textValue, tabataLeftCount, cycleLeftCount);
-        }
-        else
-        {
-            Toast.makeText(this, "Aucun programme actif ! Veuillez en sélectionner un !", Toast.LENGTH_SHORT).show();
-        }
+        TabataManager.getInstance().initAndStart(getTabata(), timerValue, textValue, tabataLeftCount, cycleLeftCount);
     }
 
     public void buttonTabataPause(View view) {
@@ -87,8 +83,15 @@ public class TabataActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
+        System.out.println("Destroy : " + this.getClass().getSimpleName());
         TabataManager.getInstance().cancelAllTimers();
     }
 

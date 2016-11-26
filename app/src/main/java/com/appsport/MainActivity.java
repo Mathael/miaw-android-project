@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.appsport.activity.ProgramActivity;
 import com.appsport.activity.StatsActivity;
-import com.appsport.activity.TabataActivity;
 import com.appsport.model.Tabata;
 
 import java.util.List;
@@ -27,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        showCurrentProgram();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         showCurrentProgram();
     }
 
@@ -49,25 +54,6 @@ public class MainActivity extends AppCompatActivity {
             homeWorkTime.setText(""+tabata.getMaxWorkTime());
             homeRestTime.setText(""+tabata.getMaxRestTime());
         }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        showCurrentProgram();
-    }
-
-    /**
-     * OnClick Listeners
-     */
-    public void onClickTabataButton(View view) {
-        final Intent activity = new Intent(getApplicationContext(), TabataActivity.class);
-        activity.putExtra("program", 1);
-        activity.putExtra("restTime", 5);
-        activity.putExtra("workTime", 10);
-        activity.putExtra("prepareTime", 8);
-        activity.putExtra("cycles", 2);
-        this.startActivity(activity);
     }
 
     public void onClickProgramButton(View view) {

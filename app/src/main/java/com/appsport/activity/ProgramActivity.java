@@ -8,6 +8,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -29,17 +32,45 @@ public class ProgramActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 0x9345;
     private LinearLayout activeProgramLayout;
 
+    private Tabata activeProgram;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_program);
 
         // Active la toolbar
-        //final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_programs);
+        setSupportActionBar(toolbar);
 
         showAllPrograms();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_programmes, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_favorite:
+                Toast.makeText(this, "action favorite", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_start:
+                final Intent intent = new Intent(getApplicationContext(), TabataActivity.class);
+                intent.putExtra("TABATA", activeProgram);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // Handle clicking
 
     public void onClickAddProgram(View view) {
         final Intent intention = new Intent(getApplicationContext(), TabataAddProgramActivity.class);
@@ -68,15 +99,11 @@ public class ProgramActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which)
             {
-                final List<Tabata> activeTabata = Tabata.find(Tabata.class, "is_Default_Active = ?", "1");
-                if(!activeTabata.isEmpty())
-                {
-                    final Tabata tabata = activeTabata.get(0);
-                    if(tabata != null) {
-                        Tabata.delete(tabata);
-                        showAllPrograms();
-                    }
-                }
+            if(activeProgram != null)
+            {
+                Tabata.delete(activeProgram);
+                showAllPrograms();
+            }
             }
 
         })
@@ -91,7 +118,7 @@ public class ProgramActivity extends AppCompatActivity {
                 showAllPrograms();
             }
             if (resultCode == Activity.RESULT_CANCELED) {
-                // TODO: remove this state -> do nothings
+                Toast.makeText(this, "Creation de programme annulée", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -122,6 +149,7 @@ public class ProgramActivity extends AppCompatActivity {
                     // Set the new selected program to active
                     view.getTabata().setDefaultActive(true);
                     view.getTabata().save();
+                    activeProgram = view.getTabata();
                 }
             });
 
@@ -142,7 +170,7 @@ public class ProgramActivity extends AppCompatActivity {
         if(getActiveProgram() != null){
             getActiveProgram().setBackgroundColor(getResources().getColor(R.color.colorGreenPrimary, getTheme()));
         }
-        view.setBackgroundColor(Color.GREEN);
+        view.setBackgroundColor(Color.GRAY);
         this.activeProgramLayout = view;
 
         if(showToast) {

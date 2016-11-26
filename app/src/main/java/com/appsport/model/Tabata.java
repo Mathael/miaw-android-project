@@ -40,7 +40,11 @@ public class Tabata extends SugarRecord implements Parcelable {
      */
     private int maxCycleCount;
 
-    public Tabata() {}
+    public Tabata() {
+        setMaxCycleCount(getMaxCycleCount());
+        setCurrentState(TabataState.NONE);
+        setCurrentTabata(getMaxTabata());
+    }
 
     public Tabata(String name, int tabata, int prepareTime, int workTime, int restTime, int cycle) {
         setName(name);

@@ -9,18 +9,16 @@ import com.appsport.R;
  */
 public enum TabataState {
 
-    NONE("None", R.color.colorWhite),
-    PREPARE("Preparation !", R.color.PREPARE),
-    REST("Repos", R.color.REST),
-    WORK("Exercices !", R.color.WORK),
-    FINISH("Terminé !", R.color.colorWhite);
+    NONE("None"),
+    PREPARE("Preparation !"),
+    REST("Repos"),
+    WORK("Exercices !"),
+    FINISH("Terminé !");
 
     private String name;
-    private int color;
 
-    TabataState(String name, int color) {
+    TabataState(String name) {
         setName(name);
-        setColor(color);
     }
 
     public String getName() {
@@ -29,13 +27,5 @@ public enum TabataState {
 
     private void setName(String name) {
         this.name = name;
-    }
-
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
     }
 }

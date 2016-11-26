@@ -34,7 +34,7 @@ public class TabataAddProgramActivity extends AppCompatActivity {
         final int workTime = Integer.parseInt(workTimeView.getText().toString());
 
         final Tabata tabata = new Tabata(name, tabataCnt, prepareTime, workTime, restTime, cycleCnt);
-        System.out.println("Nouveau programme -> \r\n" + tabata.toString());
+        //System.out.println("Nouveau programme -> \r\n" + tabata.toString());
         Tabata.save(tabata);
 
         //final Intent intent = new Intent(Intent.FLAG_ACTIVITY_CLEAR_TOP);

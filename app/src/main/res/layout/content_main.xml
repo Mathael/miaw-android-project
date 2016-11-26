@@ -11,18 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorDarkLight"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.appsport.MainActivity"
-    tools:showIn="@layout/app_bar_main">
-
-        <Button
-            android:text="@string/button_tabata"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="46dp"
-            android:id="@+id/button_tabata"
-            android:onClick="onClickTabataButton" />
+    tools:context="com.appsport.MainActivity">
 
         <TextView
             android:textColor="@color/colorWhite"
@@ -41,7 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button_program"
-            android:layout_below="@+id/button_tabata"
             android:layout_alignParentStart="true"
             android:onClick="onClickProgramButton"/>
 
