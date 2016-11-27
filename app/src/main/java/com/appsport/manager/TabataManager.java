@@ -33,7 +33,9 @@ public final class TabataManager {
 
     private List<ScheduledFuture<?>> scheduledTasks;
 
-    private TabataManager() {}
+    private TabataManager() {
+
+    }
 
     /**
      * Initialize variables used by TabataManager

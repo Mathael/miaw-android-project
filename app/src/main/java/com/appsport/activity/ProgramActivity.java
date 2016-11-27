@@ -117,11 +117,12 @@ public class ProgramActivity extends AppCompatActivity {
      * @param view
      */
     public void onClickEditProgram(View view) {
-        // TODO: implements me
+        final Intent intention = new Intent(getApplicationContext(), TabataEditActivity.class);
+        startActivityForResult(intention, REQUEST_CODE);
     }
 
     /**
-     * Supprime le programme actif
+     * Affiche une popup permettant de confirmer ou annuler la suppression du programme sélectionné.
      * @param view
      */
     public void onClickDeleteProgram(View view) {
@@ -155,11 +156,14 @@ public class ProgramActivity extends AppCompatActivity {
                 showAllPrograms();
             }
             if (resultCode == Activity.RESULT_CANCELED) {
-                Toast.makeText(this, R.string.creation_de_programme_annulee, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.action_annulee, Toast.LENGTH_SHORT).show();
             }
         }
     }
 
+    /**
+     * Construit l'affichage des programmes présents en base de données.
+     */
     private void showAllPrograms() {
         final LinearLayout favoriteLayout = (LinearLayout) findViewById(R.id.program_favorites);
         final LinearLayout mainLayout = (LinearLayout) findViewById(R.id.program_vlayout);
@@ -176,6 +180,7 @@ public class ProgramActivity extends AppCompatActivity {
         {
             final ProgramView view = new ProgramView(this, program);
 
+            // Listener pour la gestion du programme par défaut.
             view.getVerticalTextLayout().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -201,7 +206,7 @@ public class ProgramActivity extends AppCompatActivity {
                 setActiveProgramView(view.getVerticalTextLayout());
             }
 
-            // render
+            // Tri en fonction des favoris et des autres.
             if(program.isFavorite()) favoriteLayout.addView(view.getProgramSourceLayout());
             else mainLayout.addView(view.getProgramSourceLayout());
         }
@@ -220,6 +225,9 @@ public class ProgramActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * @return la vue (Layout) du programme actif
+     */
     public LinearLayout getActiveProgramView() {
         return activeProgramLayout;
     }
@@ -238,6 +246,8 @@ public class ProgramActivity extends AppCompatActivity {
         view.setBackgroundColor(Color.GRAY);
         this.activeProgramLayout = view;
 
+        // Permet de demander a Android de recalculer l'état du menu.
+        // Dans notre cas on l'utilise pour le switch de l'icone "favoris"
         invalidateOptionsMenu();
     }
 }

@@ -47,13 +47,14 @@
         <activity
             android:name=".activity.ProgramActivity"
             android:label="@string/title_activity_program"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.TabataAddProgramActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.StatsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.TabataEditActivity"></activity>
     </application>
 
 </manifest>

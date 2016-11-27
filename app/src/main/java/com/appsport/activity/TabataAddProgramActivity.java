@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.appsport.R;
 import com.appsport.model.Tabata;
@@ -15,6 +14,13 @@ import com.appsport.model.Tabata;
  */
 public class TabataAddProgramActivity extends AppCompatActivity {
 
+    private final EditText nameView = (EditText) findViewById(R.id.input_tabata_name);
+    private final EditText tabataCntView = (EditText) findViewById(R.id.input_tabata_count);
+    private final EditText cycleCntView = (EditText) findViewById(R.id.input_tabata_cycles_count);
+    private final EditText prepareTimeView = (EditText) findViewById(R.id.input_tabata_prepare_time);
+    private final EditText restTimeView = (EditText) findViewById(R.id.input_tabata_rest_time);
+    private final EditText workTimeView = (EditText) findViewById(R.id.input_tabata_work_time);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +28,6 @@ public class TabataAddProgramActivity extends AppCompatActivity {
     }
 
     public void onClickAddProgram(View view) {
-        final TextView nameView = (TextView) findViewById(R.id.input_tabata_name);
-        final EditText tabataCntView = (EditText) findViewById(R.id.input_tabata_count);
-        final EditText cycleCntView = (EditText) findViewById(R.id.input_tabata_cycles_count);
-        final EditText prepareTimeView = (EditText) findViewById(R.id.input_tabata_prepare_time);
-        final EditText restTimeView = (EditText) findViewById(R.id.input_tabata_rest_time);
-        final EditText workTimeView = (EditText) findViewById(R.id.input_tabata_work_time);
-
         final String name = nameView.getText().toString();
         final int tabataCnt = Integer.parseInt(tabataCntView.getText().toString());
         final int cycleCnt = Integer.parseInt(cycleCntView.getText().toString());
