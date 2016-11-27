@@ -78,7 +78,7 @@
             app:fab_size="normal"
             app:fab_colorNormal="@color/colorDark"
             app:fab_colorPressed="@color/colorDarkLight"
-            app:fab_label="Supprimer le programme actif" />
+            app:fab_label="@string/label_supprimer" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonEditProgram"
@@ -89,7 +89,7 @@
             app:fab_size="normal"
             app:fab_colorNormal="@color/colorDark"
             app:fab_colorPressed="@color/colorDarkLight"
-            app:fab_label="Modifier le programme actif" />
+            app:fab_label="@string/label_modifier" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/floatingActionButtonAddProgram"
@@ -100,7 +100,7 @@
             app:fab_size="normal"
             app:fab_colorNormal="@color/colorDark"
             app:fab_colorPressed="@color/colorDarkLight"
-            app:fab_label="Ajouter un programme" />
+            app:fab_label="@string/label_ajouter" />
 
     </com.github.clans.fab.FloatingActionMenu>
 

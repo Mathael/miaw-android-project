@@ -118,6 +118,7 @@ public class ProgramActivity extends AppCompatActivity {
      */
     public void onClickEditProgram(View view) {
         final Intent intention = new Intent(getApplicationContext(), TabataEditActivity.class);
+        intention.putExtra(Constants.PARCELABLE_TABATA_TAG, activeProgram);
         startActivityForResult(intention, REQUEST_CODE);
     }
 
@@ -185,12 +186,10 @@ public class ProgramActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Set current Active program to inactive
-                    // Petite bidouille car SugarORM a des soucis avec la gestion des booleans...
-                    final List<Tabata> all = Tabata.find(Tabata.class, "");
-                    for (Tabata tabata : all) {
-                        tabata.setDefaultActive(false);
+                    if(activeProgram != null) {
+                        activeProgram.setDefaultActive(false);
+                        activeProgram.save();
                     }
-                    Tabata.saveInTx(all);
 
                     // Set the new selected program to active
                     view.getTabata().setDefaultActive(true);

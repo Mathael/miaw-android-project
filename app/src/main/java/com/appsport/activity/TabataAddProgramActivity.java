@@ -14,17 +14,24 @@ import com.appsport.model.Tabata;
  */
 public class TabataAddProgramActivity extends AppCompatActivity {
 
-    private final EditText nameView = (EditText) findViewById(R.id.input_tabata_name);
-    private final EditText tabataCntView = (EditText) findViewById(R.id.input_tabata_count);
-    private final EditText cycleCntView = (EditText) findViewById(R.id.input_tabata_cycles_count);
-    private final EditText prepareTimeView = (EditText) findViewById(R.id.input_tabata_prepare_time);
-    private final EditText restTimeView = (EditText) findViewById(R.id.input_tabata_rest_time);
-    private final EditText workTimeView = (EditText) findViewById(R.id.input_tabata_work_time);
+    private EditText tabataCntView;
+    private EditText nameView;
+    private EditText cycleCntView;
+    private EditText prepareTimeView;
+    private EditText restTimeView;
+    private EditText workTimeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_add_program);
+
+        tabataCntView = (EditText) findViewById(R.id.input_tabata_count);
+        nameView = (EditText) findViewById(R.id.input_tabata_name);
+        cycleCntView = (EditText) findViewById(R.id.input_tabata_cycles_count);
+        prepareTimeView = (EditText) findViewById(R.id.input_tabata_prepare_time);
+        restTimeView = (EditText) findViewById(R.id.input_tabata_rest_time);
+        workTimeView = (EditText) findViewById(R.id.input_tabata_work_time);
     }
 
     public void onClickAddProgram(View view) {

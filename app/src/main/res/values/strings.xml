@@ -18,6 +18,9 @@
     <string name="programmes">Programmes</string>
     <string name="placeholder_string_$1">%1$s</string>
     <string name="placeholder_number_$1">%1$d</string>
+    <string name="label_ajouter">Ajouter</string>
+    <string name="label_modifier">Modifier</string>
+    <string name="label_supprimer">Supprimer</string>
 
     <!-- Main Activity -->
     <string name="button_tabata">Entrainement</string>

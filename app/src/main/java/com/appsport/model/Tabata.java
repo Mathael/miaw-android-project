@@ -61,6 +61,7 @@ public class Tabata extends SugarRecord implements Parcelable {
     }
 
     protected Tabata(Parcel in) {
+        setId(in.readLong());
         name = in.readString();
         isDefaultActive = in.readByte() != 0;
         maxTabata = in.readInt();
@@ -77,6 +78,7 @@ public class Tabata extends SugarRecord implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(getId());
         dest.writeString(name);
         dest.writeByte((byte) (isDefaultActive ? 1 : 0));
         dest.writeInt(maxTabata);
@@ -218,7 +220,7 @@ public class Tabata extends SugarRecord implements Parcelable {
 
     @Override
     public String toString() {
-        return getName() + " :\r\n\t"
+        return "[ " + getId() + " ]" + getName() + " :\r\n\t"
                 + getMaxTabata() + " Tabatas\r\n\t"
                 + getMaxCycleCount() + " Cycles\r\n\t"
                 + getPrepareTime() + " Prepare time\r\n\t"

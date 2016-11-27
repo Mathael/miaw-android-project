@@ -16,17 +16,27 @@ import com.appsport.model.Tabata;
  */
 public class TabataEditActivity extends AppCompatActivity {
 
-    private final EditText nameView = (EditText) findViewById(R.id.input_tabata_name);
-    private final EditText tabataCntView = (EditText) findViewById(R.id.input_tabata_count);
-    private final EditText cycleCntView = (EditText) findViewById(R.id.input_tabata_cycles_count);
-    private final EditText prepareTimeView = (EditText) findViewById(R.id.input_tabata_prepare_time);
-    private final EditText restTimeView = (EditText) findViewById(R.id.input_tabata_rest_time);
-    private final EditText workTimeView = (EditText) findViewById(R.id.input_tabata_work_time);
+    private Tabata program;
+
+    private EditText nameView;
+    private EditText tabataCntView;
+    private EditText cycleCntView;
+    private EditText prepareTimeView;
+    private EditText restTimeView;
+    private EditText workTimeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabata_edit);
+
+        // Récupération des champs
+        nameView = (EditText) findViewById(R.id.input_tabata_name);
+        tabataCntView = (EditText) findViewById(R.id.input_tabata_count);
+        cycleCntView = (EditText) findViewById(R.id.input_tabata_cycles_count);
+        prepareTimeView = (EditText) findViewById(R.id.input_tabata_prepare_time);
+        restTimeView = (EditText) findViewById(R.id.input_tabata_rest_time);
+        workTimeView = (EditText) findViewById(R.id.input_tabata_work_time);
 
         // Check s'il s'agit d'une edition d'un programme existant.
         final Tabata programToEdit = getIntent().getExtras().getParcelable(Constants.PARCELABLE_TABATA_TAG);
@@ -35,13 +45,14 @@ public class TabataEditActivity extends AppCompatActivity {
             return;
         }
 
+        setProgram(programToEdit);
+
         nameView.setText(this.getResources().getString(R.string.placeholder_string_$1, programToEdit.getName()));
         tabataCntView.setText(this.getResources().getString(R.string.placeholder_number_$1, programToEdit.getMaxTabata()));
         cycleCntView.setText(this.getResources().getString(R.string.placeholder_number_$1, programToEdit.getMaxCycleCount()));
         prepareTimeView.setText(this.getResources().getString(R.string.placeholder_number_$1, programToEdit.getPrepareTime()));
         restTimeView.setText(this.getResources().getString(R.string.placeholder_number_$1, programToEdit.getMaxRestTime()));
         workTimeView.setText(this.getResources().getString(R.string.placeholder_number_$1, programToEdit.getMaxWorkTime()));
-
     }
 
     @Override
@@ -53,6 +64,33 @@ public class TabataEditActivity extends AppCompatActivity {
     }
 
     public void onClickValidateEdition(View view) {
-        // TODO
+        if(getProgram() != null)
+        {
+            final String name = nameView.getText().toString();
+            final int tabataCnt = Integer.parseInt(tabataCntView.getText().toString());
+            final int cycleCnt = Integer.parseInt(cycleCntView.getText().toString());
+            final int prepareTime = Integer.parseInt(prepareTimeView.getText().toString());
+            final int restTime = Integer.parseInt(restTimeView.getText().toString());
+            final int workTime = Integer.parseInt(workTimeView.getText().toString());
+
+            getProgram().setName(name);
+            getProgram().setMaxTabata(tabataCnt);
+            getProgram().setMaxCycleCount(cycleCnt);
+            getProgram().setPrepareTime(prepareTime);
+            getProgram().setMaxRestTime(restTime);
+            getProgram().setMaxWorkTime(workTime);
+
+            getProgram().save();
+        }
+        setResult(Activity.RESULT_OK);
+        finish();
+    }
+
+    public Tabata getProgram() {
+        return program;
+    }
+
+    public void setProgram(Tabata program) {
+        this.program = program;
     }
 }
